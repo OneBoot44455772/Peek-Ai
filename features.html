@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>功能 - PeekAI</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    a { color: #6ee7b7; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 15, 26, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #2a2a3a;
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-size: 1.4rem; font-weight: bold; color: #6ee7b7; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul li a { color: #b0b0c0; font-size: 0.95rem; }
+    nav ul li a:hover { color: #6ee7b7; }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #808090;
+      margin-bottom: 3rem;
+    }
+
+    .feature-block {
+      background: #16162a;
+      border: 1px solid #2a2a3a;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .feature-block:hover {
+      border-color: #6ee7b7;
+    }
+    .feature-block .header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .feature-block .icon {
+      font-size: 2rem;
+    }
+    .feature-block h2 {
+      font-size: 1.4rem;
+      color: #6ee7b7;
+    }
+    .feature-block p {
+      color: #a0a0b0;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .feature-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .feature-block ul li {
+      color: #9090a0;
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .feature-block ul li::before {
+      content: "▸";
+      color: #6ee7b7;
+      position: absolute;
+      left: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #6ee7b7;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">PeekAI</div>
+  <ul>
+    <li><a href="index.html">首页</a></li>
+    <li><a href="features.html">功能</a></li>
+    <li><a href="commands.html">用法</a></li>
+    <li><a href="developer.html">开发人员</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h1>功能</h1>
+  <p class="subtitle">PeekAI 能做什么</p>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">💬</div>
+      <h2>智能聊天</h2>
+    </div>
+    <p>基于大语言模型，能自然对话，回答服务器相关问题，不是简单关键词回复。</p>
+    <ul>
+      <li>支持多轮对话，记住上下文</li>
+      <li>回答自然，像朋友聊天</li>
+      <li>只认唤醒词 peekai，不打扰其他人</li>
+    </ul>
+  </div>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">📈</div>
+      <h2>股票查询与扫描</h2>
+    </div>
+    <p>读取帕拉伦股市实时数据，提供查询、扫描和分析。</p>
+    <ul>
+      <li>单只查询：peekai 狼九股票</li>
+      <li>涨跌扫描：peekai 股票扫描，显示涨幅前 5 和跌幅前 5</li>
+      <li>全量分析：peekai 哪只股票最贵</li>
+      <li>别名识别：狼9、狼九都能匹配到狼⑨集团</li>
+      <li>红跌绿涨，涨跌超过 10% 加粗</li>
+    </ul>
+  </div>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">📚</div>
+      <h2>知识库</h2>
+    </div>
+    <p>内置 Bilicraft 服务器资料，包括规则、职称、指令、活动、经济系统等。</p>
+    <ul>
+      <li>服务器规则与处罚等级</li>
+      <li>职称申请条件与奖励</li>
+      <li>常用指令与传送点</li>
+      <li>股票、公会、抽奖、铁路等玩法</li>
+    </ul>
+  </div>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">🌐</div>
+      <h2>联网搜索</h2>
+    </div>
+    <p>知识库没有的内容，自动联网搜索补充。</p>
+    <ul>
+      <li>知识库完全没有答案时才触发</li>
+      <li>搜索结果会标注"准确性无法保证"</li>
+      <li>搜不到就说"查不到"，不编造</li>
+    </ul>
+  </div>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">💰</div>
+      <h2>捐款系统</h2>
+    </div>
+    <p>生成捐款订单，验证到账，记录捐款排行榜。</p>
+    <ul>
+      <li>生成订单号，记录玩家和金额</li>
+      <li>验证付款人，防止冒领</li>
+      <li>订单 10 分钟过期自动清理</li>
+      <li>捐款榜查询：peekai 捐款榜</li>
+    </ul>
+  </div>
+
+  <div class="feature-block">
+    <div class="header">
+      <div class="icon">🛒</div>
+      <h2>权益购买</h2>
+    </div>
+    <p>可购买 VIP、SVIP、猫娘语言包等权益。</p>
+    <ul>
+      <li>VIP：10000 帕元/30天，冷却 3 秒</li>
+      <li>SVIP：30000 帕元/30天，冷却 1 秒</li>
+      <li>猫娘语言包：5000 帕元/30天，猫娘风格回复</li>
+      <li>TOP：仅 Oneboot44455772，无冷却</li>
+    </ul>
+  </div>
+
+  <a href="index.html" class="back-link">← 返回首页</a>
+</section>
+
+</body>
+</html>

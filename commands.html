@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用法 - PeekAI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: #0f0f1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        a { color: #6ee7b7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(15, 15, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #2a2a3a;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .logo { font-size: 1.4rem; font-weight: bold; color: #6ee7b7; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav ul li a { color: #b0b0c0; font-size: 0.95rem; }
+        nav ul li a:hover { color: #6ee7b7; }
+
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #808090;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #6ee7b7;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+        }
+        h2:first-of-type { margin-top: 0; }
+
+        .step {
+            background: #16162a;
+            border: 1px solid #2a2a3a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+            color: #0f0f1a;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .step-content h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+        .step-content p {
+            color: #9090a0;
+            font-size: 0.9rem;
+        }
+
+        .command-table {
+            background: #16162a;
+            border: 1px solid #2a2a3a;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .command-row {
+            display: flex;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #2a2a3a;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .command-row:last-child { border-bottom: none; }
+        .command-row code {
+            background: #0f0f1a;
+            color: #6ee7b7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+        .command-row span {
+            color: #a0a0b0;
+            font-size: 0.9rem;
+        }
+
+        .tip {
+            background: #1a1a2e;
+            border-left: 3px solid #6ee7b7;
+            border-radius: 6px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            color: #a0a0b0;
+            font-size: 0.9rem;
+        }
+        .tip strong {
+            color: #6ee7b7;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: #6ee7b7;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">PeekAI</div>
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="features.html">功能</a></li>
+        <li><a href="commands.html">用法</a></li>
+        <li><a href="developer.html">开发人员</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h1>用法</h1>
+    <p class="subtitle">怎么使用 PeekAI</p>
+
+    <h2>基本用法</h2>
+
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <h3>在游戏里打字，以 peekai 开头</h3>
+            <p>所有指令都要以 <strong>peekai</strong> 开头，后面跟你的问题或命令。不带 peekai 的消息，Bot 不会理。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <h3>等 Bot 回复</h3>
+            <p>Bot 会在几秒内回复。如果它正在思考，可能需要稍等。冷却期间会提示"请稍等 X 秒"。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <h3>连续提问</h3>
+            <p>Bot 会记住最近几轮对话。你可以接着上一句问，比如先问"狼九股票"，再问"那碧伟达呢"。</p>
+        </div>
+    </div>
+
+    <h2>常用指令</h2>
+
+    <div class="command-table">
+        <div class="command-row">
+            <code>peekai 你好</code>
+            <span>和 AI 聊天</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 碧玺有什么活动</code>
+            <span>查询服务器活动</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 怎么申请建筑师</code>
+            <span>查询职称信息</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 狼九股票</code>
+            <span>查询单只股票行情</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 股票扫描</code>
+            <span>扫描涨幅前 5 和跌幅前 5</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 哪只股票最贵</code>
+            <span>分析全部股票，找出最贵的</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 哪只股票推荐买</code>
+            <span>基于数据分析股票</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 权益</code>
+            <span>查询自己的权益</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 购买 VIP</code>
+            <span>生成 VIP 购买订单</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 捐款 100</code>
+            <span>生成 100 帕元的捐款订单</span>
+        </div>
+        <div class="command-row">
+            <code>peekai 捐款榜</code>
+            <span>查看捐款排行榜</span>
+        </div>
+    </div>
+
+    <h2>股票扫描</h2>
+
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <h3>输入 peekai 股票扫描</h3>
+            <p>Bot 会扫描全部交易中的股票，显示涨幅前 5 和跌幅前 5。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <h3>看颜色</h3>
+            <p>绿色 ▲ 是涨，红色 ▼ 是跌，灰色 ─ 是平。涨跌超过 10% 会加粗。</p>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>注意：</strong>扫描结果会逐条发送，每条间隔约 0.8 秒，避免被服务器判为刷屏。
+    </div>
+
+    <h2>购买流程</h2>
+
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <h3>下单</h3>
+            <p>打 <code>peekai 购买 VIP</code>，Bot 会给你一个订单号，比如 <code>DXXXXXX</code>。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <h3>转账</h3>
+            <p>用 <code>/pay Nataly2013 金额</code> 把钱转给 Bot。必须用生成订单的那个账号转账。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <h3>到账确认</h3>
+            <p>Bot 收到转账提示后，会自动确认订单，并发放权益。</p>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>注意：</strong>订单 10 分钟内有效，过期自动作废。转账金额必须和订单金额一致，否则不会确认。
+    </div>
+
+    <h2>注意事项</h2>
+
+    <div class="tip">
+        <strong>唤醒词：</strong>所有指令必须以 <code>peekai</code> 开头，大小写不敏感。
+    </div>
+
+    <div class="tip">
+        <strong>冷却：</strong>FREE 5 秒，VIP 3 秒，SVIP 1 秒，Oneboot44455772 无冷却。
+    </div>
+
+    <div class="tip">
+        <strong>指令拦截：</strong>Bot 不会执行任何游戏内指令，以 <code>/</code> 开头的回复会被拦截。
+    </div>
+
+    <div class="tip">
+        <strong>数据准确性：</strong>股票数据标注"无法保证最新"，联网搜索结果标注"准确性无法保证"。
+    </div>
+
+    <a href="index.html" class="back-link">← 返回首页</a>
+</section>
+
+</body>
+</html>
