@@ -1,212 +1,213 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>开发人员 - PeekAI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: #0f0f1a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        a { color: #6ee7b7; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开发人员 - PeekAI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+  a { color: #6ee7b7; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-        nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(15, 15, 26, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #2a2a3a;
-            padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        nav .logo { font-size: 1.4rem; font-weight: bold; color: #6ee7b7; }
-        nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav ul li a { color: #b0b0c0; font-size: 0.95rem; }
-        nav ul li a:hover { color: #6ee7b7; }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15, 15, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2a2a3a;
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  nav .logo { font-size: 1.4rem; font-weight: bold; color: #6ee7b7; }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul li a { color: #b0b0c0; font-size: 0.95rem; }
+  nav ul li a:hover { color: #6ee7b7; }
 
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            color: #808090;
-            margin-bottom: 3rem;
-        }
+  section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    color: #808090;
+    margin-bottom: 3rem;
+  }
 
-        .dev-card {
-            background: #16162a;
-            border: 1px solid #2a2a3a;
-            border-radius: 12px;
-            padding: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .dev-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #6ee7b7, #3b82f6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-        .dev-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            image-rendering: pixelated;
-        }
-        .dev-info h2 {
-            font-size: 1.6rem;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-        .dev-info .role {
-            color: #6ee7b7;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-        }
-        .dev-info p {
-            color: #9090a0;
-            font-size: 0.95rem;
-        }
+  .dev-card {
+    background: #16162a;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .dev-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .dev-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+  .dev-info h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+  }
+  .dev-info .role {
+    color: #6ee7b7;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .dev-info p {
+    color: #9090a0;
+    font-size: 0.95rem;
+  }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1rem;
-        }
-        .skill-tag {
-            background: #0f0f1a;
-            border: 1px solid #2a2a3a;
-            border-radius: 6px;
-            padding: 0.3rem 0.8rem;
-            font-size: 0.85rem;
-            color: #6ee7b7;
-        }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .skill-tag {
+    background: #0f0f1a;
+    border: 1px solid #2a2a3a;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    color: #6ee7b7;
+  }
 
-        .info-block {
-            background: #16162a;
-            border: 1px solid #2a2a3a;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .info-block h3 {
-            font-size: 1.2rem;
-            color: #6ee7b7;
-            margin-bottom: 1rem;
-        }
-        .info-block p {
-            color: #a0a0b0;
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-        }
-        .info-block ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .info-block ul li {
-            color: #9090a0;
-            font-size: 0.9rem;
-            padding: 0.4rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .info-block ul li::before {
-            content: "▸";
-            color: #6ee7b7;
-            position: absolute;
-            left: 0;
-        }
+  .info-block {
+    background: #16162a;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .info-block h3 {
+    font-size: 1.2rem;
+    color: #6ee7b7;
+    margin-bottom: 1rem;
+  }
+  .info-block p {
+    color: #a0a0b0;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+  .info-block ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .info-block ul li {
+    color: #9090a0;
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .info-block ul li::before {
+    content: "▸";
+    color: #6ee7b7;
+    position: absolute;
+    left: 0;
+  }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #6ee7b7;
-            font-size: 0.95rem;
-        }
-    </style>
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #6ee7b7;
+    font-size: 0.95rem;
+  }
+</style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">PeekAI</div>
-    <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="features.html">功能</a></li>
-        <li><a href="commands.html">用法</a></li>
-        <li><a href="developer.html">开发人员</a></li>
-    </ul>
+  <div class="logo">PeekAI</div>
+  <ul>
+    <li><a href="index.html">首页</a></li>
+    <li><a href="features.html">功能</a></li>
+    <li><a href="commands.html">用法</a></li>
+    <li><a href="developer.html">开发人员</a></li>
+  </ul>
 </nav>
 
 <section>
-    <h1>开发人员</h1>
-    <p class="subtitle">PeekAI 的创造者</p>
+  <h1>开发人员</h1>
+  <p class="subtitle">PeekAI 的创造者</p>
 
-    <div class="dev-card">
-        <div class="dev-avatar">
-            <img src="head.png" alt="头像">
-        </div>
-        <div class="dev-info">
-            <h2>Oneboot44455772</h2>
-            <p class="role">开发者 / 天子</p>
-            <p>PeekAI 的开发者，负责 Bot 架构、AI 接入、知识库整合、股票系统、捐款系统、权益系统、网页设计等全部工作。</p>
-            <div class="skills">
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Mineflayer</span>
-                <span class="skill-tag">AI 接入</span>
-                <span class="skill-tag">知识库</span>
-                <span class="skill-tag">Web 开发</span>
-            </div>
-        </div>
+  <div class="dev-card">
+    <div class="dev-avatar">
+      <img src="你的路径" alt="头像">
     </div>
-
-    <div class="info-block">
-        <h3>项目介绍</h3>
-        <p>PeekAI 是一个为 Bilicraft 服务器打造的智能聊天助手，运行在机器人账号 Nataly2013 上。玩家无需安装任何 Mod，直接在游戏内公屏或私聊中使用。</p>
+    <div class="dev-info">
+      <h2>Oneboot44455772</h2>
+      <p class="role">开发者 / 天子</p>
+      <p>PeekAI 的开发者，负责 Bot 架构、AI 接入、知识库整合、股票系统、小游戏、捐款系统、权益系统、网页设计等全部工作。</p>
+      <div class="skills">
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Mineflayer</span>
+        <span class="skill-tag">AI 接入</span>
+        <span class="skill-tag">知识库</span>
+        <span class="skill-tag">Web 开发</span>
+      </div>
     </div>
+  </div>
 
-    <div class="info-block">
-        <h3>技术栈</h3>
-        <ul>
-            <li>Node.js + Mineflayer：Bot 运行框架</li>
-            <li>NVIDIA NIM：AI 模型接入</li>
-            <li>DeepSeek：AI 模型接入（DeepSeek V4 Flash）</li>
-            <li>知识库：本地文本 + 全文塞入</li>
-            <li>股票 API：pleasance.icu</li>
-            <li>数据持久化：JSON 文件存储</li>
-        </ul>
-    </div>
+  <div class="info-block">
+    <h3>项目介绍</h3>
+    <p>PeekAI 是一个为 Bilicraft 服务器打造的智能聊天助手，运行在机器人账号 Nataly2013 上。玩家无需安装任何 Mod，直接在游戏内公屏或私聊中使用。</p>
+  </div>
 
-    <div class="info-block">
-        <h3>功能模块</h3>
-        <ul>
-            <li>AI 问答：基于知识库和联网搜索</li>
-            <li>股票系统：查询、扫描、分析</li>
-            <li>捐款系统：订单生成、到账验证、排行榜</li>
-            <li>权益系统：VIP、SVIP、猫娘语言包</li>
-            <li>入服欢迎：彩色欢迎语</li>
-        </ul>
-    </div>
+  <div class="info-block">
+    <h3>技术栈</h3>
+    <ul>
+      <li>Node.js + Mineflayer：Bot 运行框架</li>
+      <li>NVIDIA NIM：AI 模型接入</li>
+      <li>DeepSeek：AI 模型接入（DeepSeek V4 Flash）</li>
+      <li>知识库：本地文本 + 全文塞入</li>
+      <li>股票 API：pleasance.icu</li>
+      <li>数据持久化：JSON 文件存储</li>
+    </ul>
+  </div>
 
-    <a href="index.html" class="back-link">← 返回首页</a>
+  <div class="info-block">
+    <h3>功能模块</h3>
+    <ul>
+      <li>AI 问答：基于知识库和联网搜索</li>
+      <li>股票系统：查询、扫描、分析</li>
+      <li>小游戏：数字炸弹等聊天游戏</li>
+      <li>捐款系统：订单生成、到账验证、排行榜</li>
+      <li>权益系统：VIP、SVIP、猫娘语言包、个性欢迎</li>
+      <li>入服欢迎：标准欢迎、个性欢迎、天子欢迎</li>
+    </ul>
+  </div>
+
+  <a href="index.html" class="back-link">← 返回首页</a>
 </section>
 
 </body>
