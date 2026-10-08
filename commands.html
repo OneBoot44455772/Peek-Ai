@@ -52,21 +52,21 @@
     <div class="step-num">1</div>
     <div class="step-content">
       <h3>在游戏里打字，以 peekai 开头</h3>
-      <p>所有指令都要以 <strong>peekai</strong> 开头，后面跟你的问题或命令。</p>
+      <p>所有指令都要以 <strong>peekai</strong> 开头，后面跟你的问题或命令。不带 peekai 的消息，Bot 不会理。</p>
     </div>
   </div>
   <div class="step">
     <div class="step-num">2</div>
     <div class="step-content">
       <h3>等 Bot 回复</h3>
-      <p>Bot 会在几秒内回复，冷却期间会提示"请稍等 X 秒"。</p>
+      <p>Bot 会在几秒内回复。冷却期间会提示"请稍等 X 秒"。</p>
     </div>
   </div>
   <div class="step">
     <div class="step-num">3</div>
     <div class="step-content">
       <h3>连续提问</h3>
-      <p>Bot 会记住最近几轮对话。</p>
+      <p>Bot 会记住最近几轮对话。比如先问"狼九股票"，再问"那碧伟达呢"。</p>
     </div>
   </div>
 
@@ -86,21 +86,18 @@
     <div class="command-row"><code>peekai 捐款榜</code><span>查看捐款排行榜</span></div>
   </div>
 
-  <h2>股票扫描</h2>
-  <div class="step">
-    <div class="step-num">1</div>
-    <div class="step-content">
-      <h3>输入 peekai 股票扫描</h3>
-      <p>Bot 会扫描全部交易中的股票，显示涨幅前 5 和跌幅前 5，整合成 4 行发送。</p>
-    </div>
+  <h2>股票系统</h2>
+  <div class="command-table">
+    <div class="command-row"><code>peekai 股票 &lt;公司&gt;</code><span>查询单只股票</span></div>
+    <div class="command-row"><code>peekai 狼九股票</code><span>查询狼⑨集团</span></div>
+    <div class="command-row"><code>peekai blaude股票</code><span>大小写不敏感</span></div>
+    <div class="command-row"><code>peekai 股票扫描</code><span>扫描涨幅前 5 和跌幅前 5</span></div>
+    <div class="command-row"><code>peekai 扫描股票</code><span>同上，别名</span></div>
+    <div class="command-row"><code>peekai 哪只股票最贵</code><span>分析全部股票</span></div>
+    <div class="command-row"><code>peekai 哪只股票推荐买</code><span>基于数据分析</span></div>
   </div>
-  <div class="step">
-    <div class="step-num">2</div>
-    <div class="step-content">
-      <h3>看颜色</h3>
-      <p>绿色 ▲ 是涨，红色 ▼ 是跌，灰色 ─ 是平。涨跌超过 10% 会加粗。</p>
-    </div>
-  </div>
+  <div class="tip"><strong>扫描颜色：</strong>绿色 ▲ 涨，红色 ▼ 跌，灰色 ─ 平，涨跌超过 10% 加粗。扫描结果整合成 4 行发送。</div>
+  <div class="tip"><strong>数据说明：</strong>股票数据标注"无法保证最新"，仅供参考，不构成投资建议。</div>
 
   <h2>小游戏</h2>
   <div class="command-table">
@@ -118,21 +115,21 @@
     <div class="command-row"><code>peekai 谁是卧底 结束</code><span>强制结束</span></div>
   </div>
   <div class="tip"><strong>数字炸弹：</strong>1-100 猜数字，猜中的人爆炸，同时只允许一局。</div>
-  <div class="tip"><strong>谁是卧底：</strong>3-8 人参与，1 人是卧底。报名 10 分钟、描述 3 分钟、投票 3 分钟，超时自动处理。</div>
+  <div class="tip"><strong>谁是卧底：</strong>3-8 人参与，1 人是卧底。私聊发词，平民青色，卧底红色。报名 10 分钟、描述 3 分钟、投票 3 分钟，超时自动处理。</div>
 
   <h2>购买流程</h2>
   <div class="step">
     <div class="step-num">1</div>
     <div class="step-content">
       <h3>下单</h3>
-      <p>打 <code>peekai 购买 VIP</code>，Bot 会给你一个订单号。</p>
+      <p>打 <code>peekai 购买 VIP</code>，Bot 会给你一个订单号，比如 <code>DXXXXXX</code>。</p>
     </div>
   </div>
   <div class="step">
     <div class="step-num">2</div>
     <div class="step-content">
       <h3>转账</h3>
-      <p>用 <code>/pay Nataly2013 金额</code> 把钱转给 Bot，必须用生成订单的那个账号转账。</p>
+      <p>用 <code>/pay Nataly2013 金额</code> 把钱转给 Bot。必须用生成订单的那个账号转账。</p>
     </div>
   </div>
   <div class="step">
@@ -142,7 +139,8 @@
       <p>Bot 收到转账提示后，会自动确认订单，并发放权益。</p>
     </div>
   </div>
-  <div class="tip"><strong>注意：</strong>订单 10 分钟内有效，过期自动作废。</div>
+  <div class="tip"><strong>可购买：</strong>VIP（10000 帕元/30天）、SVIP（30000 帕元/30天）、猫娘语言包（5000 帕元/30天）、个性欢迎（8000 帕元/30天）。</div>
+  <div class="tip"><strong>注意：</strong>订单 10 分钟内有效，过期自动作废。转账金额必须和订单金额一致，否则不会确认。</div>
 
   <h2>个性欢迎</h2>
   <div class="step">
@@ -161,10 +159,17 @@
   </div>
   <div class="tip"><strong>注意：</strong>欢迎语最多 100 字，支持 &amp; 颜色代码。个性欢迎优先级高于 VIP/SVIP 标准欢迎。</div>
 
+  <h2>入服欢迎</h2>
+  <div class="command-table">
+    <div class="command-row"><code>个性欢迎</code><span>自定义欢迎语，优先级最高</span></div>
+    <div class="command-row"><code>Oneboot44455772</code><span>天子欢迎</span></div>
+    <div class="command-row"><code>VIP/SVIP</code><span>标准欢迎：欢迎 玩家名 入服</span></div>
+  </div>
+
   <h2>注意事项</h2>
   <div class="tip"><strong>唤醒词：</strong>所有指令必须以 <code>peekai</code> 开头，大小写不敏感。</div>
   <div class="tip"><strong>冷却：</strong>FREE 5 秒，VIP 3 秒，SVIP 1 秒，Oneboot44455772 无冷却。</div>
-  <div class="tip"><strong>指令拦截：</strong>Bot 不会执行任何游戏内指令。</div>
+  <div class="tip"><strong>指令拦截：</strong>Bot 不会执行任何游戏内指令，以 <code>/</code> 开头的回复会被拦截。</div>
   <div class="tip"><strong>数据准确性：</strong>股票数据标注"无法保证最新"，联网搜索结果标注"准确性无法保证"。</div>
 
   <a href="index.html" class="back-link">← 返回首页</a>
